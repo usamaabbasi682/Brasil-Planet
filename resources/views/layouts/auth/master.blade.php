@@ -18,6 +18,9 @@
          .card-header {
             background-color: transparent !important;
          }
+         .invalid-feedback {
+            font-size: 12px !important;
+         }
       </style>
       @stack('custom-css')
    </head>
@@ -36,10 +39,11 @@
                      </div>
 
                      <div class="col-md-6 d-none d-md-flex align-items-center justify-content-end p-0">
-                        <div
-                           class="auth-illustration h-100 w-100"
-                           style="background-image: url('{{ asset('assets/images/auth-illustration.png') }}'); background-size: contain; background-repeat: no-repeat; background-position: right; margin-right: -20px;"
-                        ></div>
+                        @if (request()->routeIs('password.request'))
+                           <div class="auth-illustration h-100 w-100" style="background-image: url('{{ asset('assets/images/forgot-password-illustration.png') }}'); background-size: contain; background-repeat: no-repeat; background-position: right; margin-right: -20px;"></div>
+                        @else 
+                           <div class="auth-illustration h-100 w-100" style="background-image: url('{{ asset('assets/images/auth-illustration.png') }}'); background-size: contain; background-repeat: no-repeat; background-position: right; margin-right: -20px;"></div>
+                        @endif
                      </div>
                   </div>
                </div>
