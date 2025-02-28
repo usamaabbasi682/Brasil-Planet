@@ -41,6 +41,8 @@
                      <div class="col-md-6 d-none d-md-flex align-items-center justify-content-end p-0">
                         @if (request()->routeIs('password.request'))
                            <div class="auth-illustration h-100 w-100" style="background-image: url('{{ asset('assets/images/forgot-password-illustration.png') }}'); background-size: contain; background-repeat: no-repeat; background-position: right; margin-right: -20px;"></div>
+                        @elseif (request()->routeIs('password.reset'))
+                           <div class="auth-illustration h-100 w-100" style="background-image: url('{{ asset('assets/images/request-sent-illustration.png') }}'); background-size: contain; background-repeat: no-repeat; background-position: right; margin-right: -20px;"></div>
                         @else 
                            <div class="auth-illustration h-100 w-100" style="background-image: url('{{ asset('assets/images/auth-illustration.png') }}'); background-size: contain; background-repeat: no-repeat; background-position: right; margin-right: -20px;"></div>
                         @endif

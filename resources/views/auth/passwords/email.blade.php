@@ -2,11 +2,6 @@
 @section('title', 'Password Reset') 
 @section('main')
 <div class="card card-plain custom-auth-form-card">
-   @if (session('status'))
-   <div class="alert alert-success" role="alert">
-      {{ session('status') }}
-   </div>
-   @endif
    <div class="card-header pb-0 text-start">
       <h3 class="font-weight-bolder" style="color: #071230;">
          Forgot Your Password?

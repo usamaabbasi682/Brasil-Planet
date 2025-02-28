@@ -19,4 +19,16 @@ class ForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
+
+    protected function sendResetLinkResponse($request, $response)
+    {
+        try {
+            flash()->success('Password reset link sent successfully!');
+            return back();
+        } catch (\Exception $e) {
+            flash()->error('Something went wrong!');
+            return back();
+        }
+    }
+
 }
