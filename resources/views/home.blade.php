@@ -1,7 +1,30 @@
 @extends('layouts.app')
 @section('title', auth()->user()->hasRole($adminRole) ? 'Dashboard' : 'Service')
+@section('breadcrumb')
+@hasrole($adminRole)
+<nav aria-label="breadcrumb">
+   <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 d-flex">
+      <li class="breadcrumb-item">
+         <img src="{{ asset('assets/images/dashboard-grey-icon.png') }}" alt="Dashboard Icon" class="mx-1" />
+      </li>
+      <li class="breadcrumb-item text-dark mt-1">Dashboard</li>
+   </ol>
+   <h6 class="mt-0">Dashboard</h6>
+</nav>
+@endhasrole
+@hasrole($supplierRole)
+<nav aria-label="breadcrumb">
+   <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 d-flex">
+      <li class="breadcrumb-item">
+         <img src="{{ asset('assets/images/dashboard-grey-icon.png') }}" alt="Dashboard Icon" class="mx-1" />
+      </li>
+      <li class="breadcrumb-item text-dark mt-1">Service</li>
+   </ol>
+   <h6 class="mt-0">Service</h6>
+</nav>
+@endhasrole
+@endsection 
 @section('main')
-
 @hasrole($adminRole)
 <div class="container-fluid py-4">
    <div class="responsive-container mb-3" style="display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;background-image: url('{{ asset('assets/images/welcome-bg.png') }}');background-size: cover;background-position: center;background-repeat: no-repeat;border-radius: 20px;overflow: hidden;">
@@ -428,7 +451,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -458,7 +481,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -488,7 +511,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -567,7 +590,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -597,7 +620,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -627,7 +650,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -706,7 +729,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -736,7 +759,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -766,7 +789,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -796,7 +819,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -875,7 +898,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -905,7 +928,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>
@@ -935,7 +958,7 @@
                            </div>
                         </td>
                         <td class="text-sm font-weight-normal">
-                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = 'view-service.html'">
+                           <div class="cursor-pointer d-flex align-items-center gap-3" onclick="window.location.href = '{{ route('service.view') }}'">
                               <img src="{{ asset('assets/images/view-icon.png') }}" alt="" />
                            </div>
                         </td>

@@ -1,27 +1,6 @@
 <nav class="navbar navbar-main navbar-expand-lg position-sticky shadow-none z-index-sticky" id="navbarBlur" data-scroll="true">
     <div class="container-fluid py-1 px-3">
-      @hasrole($adminRole)
-      <nav aria-label="breadcrumb">
-         <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 d-flex">
-            <li class="breadcrumb-item">
-               <img src="{{ asset('assets/images/dashboard-grey-icon.png') }}" alt="Dashboard Icon" class="mx-1" />
-            </li>
-            <li class="breadcrumb-item text-dark mt-1">Dashboard</li>
-         </ol>
-         <h6 class="mt-0">Dashboard</h6>
-      </nav>
-      @endhasrole
-      @hasrole($supplierRole)
-      <nav aria-label="breadcrumb">
-         <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 d-flex">
-            <li class="breadcrumb-item">
-               <img src="{{ asset('assets/images/dashboard-grey-icon.png') }}" alt="Dashboard Icon" class="mx-1" />
-            </li>
-            <li class="breadcrumb-item text-dark mt-1">Service</li>
-         </ol>
-         <h6 class="mt-0">Service</h6>
-      </nav>
-      @endhasrole
+      @yield('breadcrumb')
        <button class="sidenav-togglers sidenav-toggler-inner d-xl-block btn p-0 me-2 ms-4" type="button" id="custom-sidenav-toggler" aria-label="Toggle navigation">
           <div>
              <span class="sidenav-toggler-line"></span>
